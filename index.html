@@ -11,47 +11,95 @@
 </head>
 <body>
     <nav class="topic-nav">
-        <div class="nav-item">
-            <button class="nav-btn active" data-section="home">
-                <span class="icon">🏠</span>
-                <span class="label">Home</span>
-            </button>
+        <div class="nav-brand">
+            <div class="logo-circle"></div>
         </div>
-        <div class="nav-item">
-            <button class="nav-btn" data-section="projects">
-                <span class="icon">💻</span>
-                <span class="label">Projects</span>
-            </button>
-        </div>
-        <div class="nav-item">
-            <button class="nav-btn" data-section="skills">
-                <span class="icon">⚡</span>
-                <span class="label">Skills</span>
-            </button>
-        </div>
-        <div class="nav-item">
-            <button class="nav-btn" data-section="contact">
-                <span class="icon">📧</span>
-                <span class="label">Contact</span>
-            </button>
+        <div class="nav-items">
+            <div class="nav-item">
+                <button class="nav-btn active" data-section="home">
+                    <svg class="icon" viewBox="0 0 24 24">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                    <span class="label">Home</span>
+                </button>
+            </div>
+            <div class="nav-item">
+                <button class="nav-btn" data-section="projects">
+                    <svg class="icon" viewBox="0 0 24 24">
+                        <rect x="3" y="3" width="7" height="7"></rect>
+                        <rect x="14" y="3" width="7" height="7"></rect>
+                        <rect x="14" y="14" width="7" height="7"></rect>
+                        <rect x="3" y="14" width="7" height="7"></rect>
+                    </svg>
+                    <span class="label">Projects</span>
+                </button>
+            </div>
+            <div class="nav-item">
+                <button class="nav-btn" data-section="skills">
+                    <svg class="icon" viewBox="0 0 24 24">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                    </svg>
+                    <span class="label">Skills</span>
+                </button>
+            </div>
+            <div class="nav-item">
+                <button class="nav-btn" data-section="contact">
+                    <svg class="icon" viewBox="0 0 24 24">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                    <span class="label">Contact</span>
+                </button>
+            </div>
         </div>
     </nav>
 
     <div class="container">
         <!-- Home Section -->
         <section id="home" class="section active">
-            <h1>Welcome to My GitHub Page</h1>
-            <p>This is my personal GitHub Pages website. Here you can find information about my projects and contributions.</p>
+            <div class="banner">
+                <div class="title-wrapper">
+                    <h1>Hi, I'm Gonçalo</h1>
+                    <div class="subtitle">Software Developer</div>
+                </div>
+                <div class="description">
+                    <p>Crafting digital experiences through elegant code</p>
+                    <div class="cta-buttons">
+                        <a href="#projects" class="btn primary">View My Work</a>
+                        <a href="#contact" class="btn secondary">Get in Touch</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+            <h1>About Me</h1>
+            <p>I am a passionate Software Engineer, recently graduated Bachelor's Degree in Informatics Engineering.</p>
         </section>
 
         <!-- Projects Section -->
         <section id="projects" class="section">
             <h1>My Projects</h1>
             <div class="projects-grid">
-                <!-- Add your project cards here -->
                 <div class="project-card">
-                    <h3>Project 1</h3>
-                    <p>Description of your project</p>
+                    <h3>Langdle</h3>
+                    <img src="images/langdle.png" alt="Langdle">
+                    <p>Description of Project 1</p>
+                    <a href="#" class="btn">View Project</a>
+                </div>
+                <div class="project-card">
+                    <h3>Project 2</h3>
+                    <img src="images/project2.jpg" alt="Project 2">
+                    <p>Description of Project 2</p>
+                    <a href="#" class="btn">View Project</a>
+                </div>
+                <div class="project-card">
+                    <h3>Project 3</h3>
+                    <img src="images/project3.jpg" alt="Project 3">
+                    <p>Description of Project 3</p>
+                    <a href="#" class="btn">View Project</a>
                 </div>
             </div>
         </section>
@@ -60,9 +108,16 @@
         <section id="skills" class="section">
             <h1>Skills</h1>
             <div class="skills-container">
-                <!-- Add your skills here -->
+                <div class="skill">HTML</div>
+                <div class="skill">CSS</div>
                 <div class="skill">JavaScript</div>
-                <div class="skill">HTML/CSS</div>
+                <div class="skill">Python</div>
+                <div class="skill">Java</div>
+                <div class="skill">C#</div>
+                <div class="skill">SQL</div>
+                <div class="skill">PHP</div>
+                <div class="skill">Git</div>
+                <div class="skill">CI/CD</div>
             </div>
         </section>
 
@@ -71,38 +126,34 @@
             <h1>Get in Touch</h1>
             <div class="contact-links">
                 <a href="https://github.com/Goncalo-N" target="_blank">GitHub</a>
-                <a href="mailto:your.email@example.com">Email</a>
+                <a href="mailto:nogueira.goncalo15@gmail.com">Email</a>
             </div>
         </section>
     </div>
 
     <script>
-        // Basic styling
-        document.body.style.background = "linear-gradient(135deg, #ff8c42 0%, #2d3436 100%)";
-        document.querySelector('.container').style.background = "rgba(45, 52, 54, 0.95)";
-        document.querySelectorAll('h1').forEach(h1 => h1.style.color = "#ff8c42");
-        document.querySelectorAll('p').forEach(p => p.style.color = "#dfe6e9");
+        document.addEventListener('DOMContentLoaded', function() {
+            const buttons = document.querySelectorAll('.nav-btn');
+            const sections = document.querySelectorAll('.section');
 
-        // Navigation functionality
-        const buttons = document.querySelectorAll('.nav-btn');
-        const sections = document.querySelectorAll('.section');
+            buttons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all buttons and sections
+                    buttons.forEach(btn => btn.classList.remove('active'));
+                    sections.forEach(section => section.classList.remove('active'));
 
-        buttons.forEach(button => {
-            button.addEventListener('click', () => {
-                const sectionId = button.dataset.section;
-                
-                // Update active button
-                buttons.forEach(btn => btn.classList.remove('active'));
-                button.classList.add('active');
-                
-                // Show selected section
-                sections.forEach(section => {
-                    section.classList.remove('active');
-                    if (section.id === sectionId) {
-                        section.classList.add('active');
+                    // Add active class to clicked button
+                    button.classList.add('active');
+
+                    // Show corresponding section
+                    const sectionId = button.dataset.section;
+                    const targetSection = document.getElementById(sectionId);
+                    if (targetSection) {
+                        targetSection.classList.add('active');
                     }
                 });
             });
         });
     </script>
+</body>
 </html>
