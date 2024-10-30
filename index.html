@@ -8,6 +8,7 @@
     <title>Welcome to My GitHub Page</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 </head>
 <body>
     <nav class="topic-nav">
@@ -58,16 +59,18 @@
     <div class="container">
         <!-- Home Section -->
         <section id="home" class="section active">
+            <div id="particles-js"></div>
+            
             <div class="banner">
                 <div class="title-wrapper">
-                    <h1>Hi, I'm Gonçalo</h1>
-                    <div class="subtitle">Software Developer</div>
+                    <h1 class="floating">Hi, I'm Gonçalo</h1>
+                    <div class="subtitle" id="typing-text"></div>
                 </div>
                 <div class="description">
                     <p>Crafting digital experiences through elegant code</p>
                     <div class="cta-buttons">
-                        <a href="#projects" class="btn primary">View My Work</a>
-                        <a href="#contact" class="btn secondary">Get in Touch</a>
+                        <button class="btn primary" data-section="projects">View My Work</button>
+                        <button class="btn secondary" data-section="contact">Get in Touch</button>
                     </div>
                 </div>
             </div>
@@ -153,6 +156,103 @@
                     }
                 });
             });
+
+            // Add click handlers for CTA buttons
+            document.querySelectorAll('.cta-buttons .btn').forEach(button => {
+                button.addEventListener('click', () => {
+                    const sectionId = button.dataset.section;
+                    
+                    // Remove active class from all buttons and sections
+                    document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
+                    document.querySelectorAll('.section').forEach(section => section.classList.remove('active'));
+                    
+                    // Activate the target section and its nav button
+                    document.querySelector(`.nav-btn[data-section="${sectionId}"]`).classList.add('active');
+                    document.getElementById(sectionId).classList.add('active');
+                });
+            });
+        });
+
+        // Particles configuration
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 80, density: { enable: true, value_area: 800 } },
+                color: { value: '#ff8c42' },
+                shape: { type: 'circle' },
+                opacity: {
+                    value: 0.5,
+                    random: false,
+                    animation: { enable: true, speed: 1, opacity_min: 0.1, sync: false }
+                },
+                size: {
+                    value: 3,
+                    random: true,
+                    animation: { enable: true, speed: 2, size_min: 0.1, sync: false }
+                },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: '#ff8c42',
+                    opacity: 0.4,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 2,
+                    direction: 'none',
+                    random: false,
+                    straight: false,
+                    out_mode: 'out',
+                    bounce: false,
+                }
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: {
+                    onhover: { enable: true, mode: 'repulse' },
+                    onclick: { enable: true, mode: 'push' },
+                    resize: true
+                }
+            },
+            retina_detect: true
+        });
+
+        // Typing effect
+        const texts = ['Software Developer', 'Problem Solver', 'Creative Thinker'];
+        let textIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        let typingSpeed = 100;
+
+        function typeText() {
+            const currentText = texts[textIndex];
+            const typingElement = document.getElementById('typing-text');
+
+            if (isDeleting) {
+                typingElement.textContent = currentText.substring(0, charIndex - 1);
+                charIndex--;
+                typingSpeed = 50;
+            } else {
+                typingElement.textContent = currentText.substring(0, charIndex + 1);
+                charIndex++;
+                typingSpeed = 100;
+            }
+
+            if (!isDeleting && charIndex === currentText.length) {
+                isDeleting = true;
+                typingSpeed = 1000; // Pause at end
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                textIndex = (textIndex + 1) % texts.length;
+                typingSpeed = 500; // Pause before starting new word
+            }
+
+            setTimeout(typeText, typingSpeed);
+        }
+
+        // Start the typing effect when the page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            typeText();
         });
     </script>
 </body>
