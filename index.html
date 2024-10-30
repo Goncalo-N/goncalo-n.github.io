@@ -1,0 +1,108 @@
+<!-- html landing page for github.io  -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to My GitHub Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="topic-nav">
+        <div class="nav-item">
+            <button class="nav-btn active" data-section="home">
+                <span class="icon">🏠</span>
+                <span class="label">Home</span>
+            </button>
+        </div>
+        <div class="nav-item">
+            <button class="nav-btn" data-section="projects">
+                <span class="icon">💻</span>
+                <span class="label">Projects</span>
+            </button>
+        </div>
+        <div class="nav-item">
+            <button class="nav-btn" data-section="skills">
+                <span class="icon">⚡</span>
+                <span class="label">Skills</span>
+            </button>
+        </div>
+        <div class="nav-item">
+            <button class="nav-btn" data-section="contact">
+                <span class="icon">📧</span>
+                <span class="label">Contact</span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Home Section -->
+        <section id="home" class="section active">
+            <h1>Welcome to My GitHub Page</h1>
+            <p>This is my personal GitHub Pages website. Here you can find information about my projects and contributions.</p>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section">
+            <h1>My Projects</h1>
+            <div class="projects-grid">
+                <!-- Add your project cards here -->
+                <div class="project-card">
+                    <h3>Project 1</h3>
+                    <p>Description of your project</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section">
+            <h1>Skills</h1>
+            <div class="skills-container">
+                <!-- Add your skills here -->
+                <div class="skill">JavaScript</div>
+                <div class="skill">HTML/CSS</div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <h1>Get in Touch</h1>
+            <div class="contact-links">
+                <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+                <a href="mailto:your.email@example.com">Email</a>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Basic styling
+        document.body.style.background = "linear-gradient(135deg, #ff8c42 0%, #2d3436 100%)";
+        document.querySelector('.container').style.background = "rgba(45, 52, 54, 0.95)";
+        document.querySelectorAll('h1').forEach(h1 => h1.style.color = "#ff8c42");
+        document.querySelectorAll('p').forEach(p => p.style.color = "#dfe6e9");
+
+        // Navigation functionality
+        const buttons = document.querySelectorAll('.nav-btn');
+        const sections = document.querySelectorAll('.section');
+
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                const sectionId = button.dataset.section;
+                
+                // Update active button
+                buttons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                
+                // Show selected section
+                sections.forEach(section => {
+                    section.classList.remove('active');
+                    if (section.id === sectionId) {
+                        section.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</html>
