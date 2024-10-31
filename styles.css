@@ -174,40 +174,6 @@ p {
     transition: transform 0.5s ease;
 }
 
-.project-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.85);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.project-details {
-    padding: 2rem;
-    text-align: center;
-    transform: translateY(20px);
-    transition: transform 0.3s ease;
-}
-
-.project-details h3 {
-    color: #ff8c42;
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-}
-
-.project-details p {
-    color: rgba(255, 255, 255, 0.8);
-    margin-bottom: 1.5rem;
-    font-size: 0.9rem;
-    line-height: 1.6;
-}
-
 .project-links {
     display: flex;
     gap: 1rem;
@@ -240,14 +206,6 @@ p {
     transform: translateY(-5px);
 }
 
-.project-card:hover .project-overlay {
-    opacity: 1;
-}
-
-.project-card:hover .project-details {
-    transform: translateY(0);
-}
-
 .project-card:hover img {
     transform: scale(1.1);
 }
@@ -265,21 +223,6 @@ p {
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 15px;
     padding: 20px 0;
-}
-
-.skill {
-    background: rgba(255, 140, 66, 0.1);
-    color: #ff8c42;
-    padding: 12px 20px;
-    border-radius: 12px;
-    text-align: center;
-    transition: all 0.3s ease;
-    border: 1px solid rgba(255, 140, 66, 0.2);
-}
-
-.skill:hover {
-    background: rgba(255, 140, 66, 0.2);
-    transform: translateY(-2px);
 }
 
 .contact-links {
@@ -526,12 +469,6 @@ p {
 .btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(255, 140, 66, 0.3);
-}
-
-footer {
-    text-align: center;
-    padding: 20px;
-    color: rgba(255, 255, 255, 0.6);
 }
 
 /* Add these new styles */
@@ -820,33 +757,10 @@ footer {
     margin: 0 auto;
 }
 
-.section-title {
-    margin-bottom: 4rem;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.section-number {
-    color: #ff8c42;
-    font-size: 1.5rem;
-    font-family: monospace;
-}
-
 #contact h1 {
     font-size: 2.5rem;
     color: white;
     position: relative;
-}
-
-.contact-content {
-    text-align: center;
-}
-
-.contact-content p {
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 1.2rem;
-    margin-bottom: 3rem;
 }
 
 .contact-links {
@@ -881,10 +795,6 @@ footer {
     .contact-links {
         flex-direction: column;
         align-items: center;
-    }
-    
-    .section-title {
-        justify-content: center;
     }
 }
 #contact h1 {
